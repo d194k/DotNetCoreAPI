@@ -1,0 +1,9 @@
+C:\Projects\DotNet Core Projects\CoreWebAPI\CoreDAL\bin\Debug\netcoreapp2.2\CoreDAL.deps.json
+C:\Projects\DotNet Core Projects\CoreWebAPI\CoreDAL\bin\Debug\netcoreapp2.2\CoreDAL.dll
+C:\Projects\DotNet Core Projects\CoreWebAPI\CoreDAL\bin\Debug\netcoreapp2.2\CoreDAL.pdb
+C:\Projects\DotNet Core Projects\CoreWebAPI\CoreDAL\obj\Debug\netcoreapp2.2\CoreDAL.csprojAssemblyReference.cache
+C:\Projects\DotNet Core Projects\CoreWebAPI\CoreDAL\obj\Debug\netcoreapp2.2\CoreDAL.csproj.CoreCompileInputs.cache
+C:\Projects\DotNet Core Projects\CoreWebAPI\CoreDAL\obj\Debug\netcoreapp2.2\CoreDAL.AssemblyInfoInputs.cache
+C:\Projects\DotNet Core Projects\CoreWebAPI\CoreDAL\obj\Debug\netcoreapp2.2\CoreDAL.AssemblyInfo.cs
+C:\Projects\DotNet Core Projects\CoreWebAPI\CoreDAL\obj\Debug\netcoreapp2.2\CoreDAL.dll
+C:\Projects\DotNet Core Projects\CoreWebAPI\CoreDAL\obj\Debug\netcoreapp2.2\CoreDAL.pdb
