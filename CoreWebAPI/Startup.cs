@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using CoreDAL.Models;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace CoreWebAPI
 {
@@ -27,9 +28,14 @@ namespace CoreWebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddMvcOptions(options =>
+                {
+                    options.ReturnHttpNotAcceptable = true;
+                })
+                .AddXmlSerializerFormatters();
             services.AddDbContext<OrionDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("OrionDBConnection")));
-
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
@@ -50,7 +56,10 @@ namespace CoreWebAPI
                     ;
                 });
             });
-
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("V1", new Info { Title = "EmployeeService", Version = "V1" });
+            });
         }
 
 
@@ -67,6 +76,12 @@ namespace CoreWebAPI
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/V1/swagger.json", "EmployeeServiceV1.0");
+            });
 
             app.UseHttpsRedirection();
             app.UseMvc();
